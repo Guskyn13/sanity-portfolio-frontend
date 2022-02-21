@@ -1,0 +1,28 @@
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    // margin: 0 0 50px 0;
+}
+.screenSubHeading {
+    letter-spacing: 3px;
+    font-size: 18px;
+    color: var(--gray-color);
+}
+.screenHeading {
+    font-size: 38px;
+    color: var(--black-color);
+}
+.headingSeperator {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 350px;
+    margin: 10px 0 0 0;
+}
+.seperaorLine {
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
