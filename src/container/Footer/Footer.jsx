@@ -14,7 +14,7 @@ const Footer = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formData;
+  const { name, email, message } = formData;
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -26,9 +26,9 @@ const Footer = () => {
 
     const contact = {
       _type: 'contact',
-      name: formData.username,
-      email: formData.email,
-      message: formData.message,
+      name: name,
+      email: email,
+      message: message,
     };
 
     client.create(contact)
@@ -102,7 +102,7 @@ const Footer = () => {
           {!isFormSubmitted ? (
             <div className="app__footer-form app__flex">
               <div className="app__flex">
-                <input type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+                <input type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
               </div>
               <div className="app__flex">
                 <input type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />

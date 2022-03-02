@@ -1,34 +1,61 @@
 .app__about {
     flex: 1;
-    width: 100%;
+    width: 80%;
     height: 100%;
     flex-direction: column;
 }
 .app__profiles {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 90%;
-    flex-wrap: wrap;
-    margin-top: 4rem;
-
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    margin-top: 3rem;
+    box-shadow: 0 0px 20px -2px var(--white-color);
+    @media screen and (min-width: 350px) {
+        height: 650px;
+        width: 100%;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+    }
+    @media screen and (min-width: 600px) {
+        height: 900px;
+        width: 85%;
+    }
+    @media screen and (min-width: 1200px) {
+        height: 400px;
+    }
+    @media screen and (min-width: 1400px) {
+        height: 450px;
+    }
+    @media screen and (min-width: 1800px) {
+        height: 350px;
+    }
+    @media screen and (min-width: 2000px) {
+        height: 730px;
+        width: 100%;
+        justify-content: space-around;
+    }
     .app__about-parent {
         display: flex;
-        flex-direction: column;
-        width: 60%;
-        box-shadow: 0 0px 20px -2px var(--white-color);
-        // padding-top: 25px;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
 
         .app__about-card {
             display: flex;
-            align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-between;
+            flex-direction: row;
             width: 100%;
 
             .app__about-profile {
                 display: flex;
                 padding: 0 25px;
                 padding-top: 20px;
+                @media screen and (max-width: 350px) {
+                    display: none;
+                }
 
                 @media screen and (max-width: 2000px) {
                     display: none;
@@ -37,58 +64,152 @@
 
             .btn {
                 display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                height: 80%;
-                flex-wrap: wrap;
-
-                .app__profile-item {
+                // flex-direction: row;
+                // flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                // padding-top: 25px;
+                // flex-direction: row;
+                @media screen and (min-width: 600px) {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    width: 30%;
-
-                    img {
-                        width: 50%;
-                        height: 50%;
-                    }
-
-                    h2 {
-                        font-size: 1.25rem;
-                        font-weight: 800;
-                        color: var(--white-color);
-                        align-content: center;
-                    }
-
-                    p {
-                        font-size: 1.1rem;
-                        color: var(--gray-color);
-                    }
                 }
-
-                @media screen and (max-width: 1200px) {
-                    flex-direction: column;
-                    // padding-bottom: 15px;
-                    align-items: center;
-
-                    p {
-                        display: none;
+                // @media screen and (min-width: 900px) {
+                //     width: 100%;
+                //     height: 100%;
+                //     flex-wrap: wrap;
+                //     margin-top: 3rem;
+                //     border-radius: 25px;
+                // }
+                .app__profile-item-container {
+                    display: flex;
+                    justify-content: space-evenly;
+                    // align-items: center;
+                    flex-direction: row;
+                    width: 100%;
+                    height: 800px;
+                    // padding-top: 40%;
+                    // margin-left: 50px;
+                    // flex-wrap: wrap;
+                    // @media screen and (min-width: 500px) {
+                    //     display: flex;
+                    //     justify-content: center;
+                    //     align-items: center;
+                    // }
+                    // @media screen and (min-width: 350px) {
+                    //     height: 100%;
+                    // }
+                    @media screen and (min-width: 350px) {
+                        flex-direction: column;
+                        height: 100%;
                     }
-
-                    img {
-                        padding-top: 25px;
+                    @media screen and (min-width: 1200px) {
+                        flex-direction: row;
                     }
-
-                    h2 {
-                        font-size: 5px;
+                    @media screen and (min-width: 2000px) {
+                        display: flex;
+                        width: 650px;
+                        height: 400px;
+                        // padding-top: 300px;
+                        margin-top: 20%;
+                        justify-content: center;
+                        align-items: center;
                     }
+                    .app__profile-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 100%;
+                        // padding-left: 20px;
+                        // padding-top: 35%;
+                        // padding-top: 25px;
+                        // @media screen and (min-width: 350px) {
+                        //     display: flex;
+                        //     align-items: center;
+                        //     justify-content: center;
+                        // }
+                        height: 100%;
+                        // justify-content: center;
+                        // margin: 0 10px;
+                        padding: 0 20px;
 
-                    button {
-                        display: none;
+                        img {
+                            border-radius: 10px;
+                            @media screen and (min-width: 350px) {
+                                width: 75px;
+                                height: 75px;
+                                margin-top: 25px;
+                            }
+                            @media screen and (min-width: 800px) {
+                                width: 100px;
+                                height: 100px;
+                            }
+                            @media screen and (min-width: 2000px) {
+                                width: 125px;
+                                height: 125px;
+                            }
+                        }
+
+                        h2 {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 1.25rem;
+                            font-weight: 800;
+                            color: var(--white-color);
+                            @media screen and (min-width: 350px) {
+                                font-size: 1rem;
+                            }
+                            @media screen and (min-width: 800px) {
+                                font-size: 1.2rem;
+                            }
+                            @media screen and (min-width: 2000px) {
+                                font-size: 1.5rem;
+                            }
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            color: var(--gray-color);
+                            @media screen and (min-width: 800px) {
+                                font-size: 1.2rem;
+                            }
+                            @media screen and (min-width: 1200px) {
+                                font-size: 0.85rem;
+                            }
+                            @media screen and (min-width: 2000px) {
+                                font-size: 1.1rem;
+                            }
+                            @media screen and (max-width: 600px) {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
+
+            // @media screen and (min-width: 1200px) {
+            //     flex-direction: column;
+            //     padding-bottom: 15px;
+            //     align-items: center;
+
+            //     p {
+            //         display: none;
+            //     }
+
+            //     img {
+            //         padding-top: 25px;
+            //     }
+
+            //     h2 {
+            //         font-size: 5px;
+            //     }
+
+            //     button {
+            //         display: none;
+            //     }
+            // }
 
             //             @media screen and (min-width: 2000px) {
             //                 height: 90%;
@@ -121,22 +242,8 @@
             //         height: 100%;
         }
 
-        @media screen and (max-width: 2000px) {
-            box-shadow: none;
-        }
-    }
-}
-
-.button {
-    margin-top: 310px;
-    margin-left: 120px;
-    padding: 20px;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
-    @media screen and (max-width: 2000px) {
-        display: none;
+        // @media screen and (max-width: 2000px) {
+        //     box-shadow: none;
+        // }
     }
 }
