@@ -49,12 +49,13 @@ const Header = () => {
                 loop={Infinity}
                 steps={[
                   "Full Stack Dev",
-                  1000,
+                  1500,
                   "Web Developer",
-                  1000,
+                  1500,
                   "Freelancer",
-                  1000,
+                  1500,
                 ]}
+                wrapper='p'
               />
             </div>
           </div>
@@ -74,7 +75,7 @@ const Header = () => {
         transistion={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
-        <img src={images.profile} alt="profile_bg" />
+        <img src={images.profileImg} alt="profile_bg" />
 
       </motion.div>
     </div>

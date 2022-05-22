@@ -27,7 +27,7 @@ const About = (props) => {
         <div className='app__about-parent'>
           <div className='app__about-card'>
             <div className='app__about-profile'>
-              <img src={images.profile} />
+              <img src={images.profileImg} alt="profile" />
             </div>
 
             <div className='btn'>
