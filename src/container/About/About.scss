@@ -38,7 +38,7 @@
     }
     .app__about-parent {
         display: flex;
-        width: 80%;
+        width: 95%;
         justify-content: space-between;
         align-items: center;
         height: 100%;
@@ -51,7 +51,7 @@
 
             .app__about-profile {
                 display: flex;
-                padding: 0 25px;
+                // padding: 0 25px;
                 padding-top: 20px;
                 @media screen and (max-width: 350px) {
                     display: none;
@@ -59,6 +59,10 @@
 
                 @media screen and (max-width: 2000px) {
                     display: none;
+                }
+
+                img {
+                    width: 900px;
                 }
             }
 
