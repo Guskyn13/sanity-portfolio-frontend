@@ -62,7 +62,7 @@ const Header = () => {
 
           <div className='app__header-buttons'>
             <button onClick={() => scrollToHireMe()}>Hire ME</button>
-            <a href="Resume.pdf" download="Resume.pdf">
+            <a href="Developer Resume.pdf" download="Developer Resume.pdf">
               <button>Resume</button>
             </a>
           </div>
