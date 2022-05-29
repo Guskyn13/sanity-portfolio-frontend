@@ -94,6 +94,10 @@
   }
 }
 
+.app__footer-height {
+  height: 3rem;
+}
+
 .app__footer-left-links {
   font-size: 2rem;
   padding-top: 10px;
@@ -337,7 +341,13 @@
 //   }
 // }
 
-// .app__footer-response {
-//   font-size: 2rem;
-//   padding-top: 5%;
-// }
+.app__footer-response-div {
+  height: 100%;
+  width: 100%;
+}
+
+.app__footer-response {
+  padding-top: 25%;
+  font-size: 2rem;
+  // padding-top: 5%;
+}

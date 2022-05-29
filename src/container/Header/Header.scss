@@ -1,9 +1,10 @@
 #home {
-    position: relative;
-    background: url('../../assets//bgIMG.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
+    background-color: gray;
+    // position: relative;
+    // background: url('../../assets//bgIMG.png');
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: repeat;
 
     .app__wrapper {
         padding: 0;
@@ -73,12 +74,11 @@
 
     .badge-cmp,
     .tag-cmp {
-        padding: 1rem 2rem;
-        // background: var(--white-color);
+        padding: 2.5rem 2rem;
         border-radius: 15px;
         // flex-direction: row;
         width: auto;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        // box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
         p {
             font-size: 1.25rem;
@@ -106,11 +106,19 @@
         }
     }
 
-    .app__header-typical {
+    .app__header-name {
         font-size: 5rem;
+    }
+
+    .app__header-height {
+        height: 3rem;
+    }
+
+    .app__header-typical {
+        font-size: 3.5rem;
 
         @media screen and (min-width: 2000px) {
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
     }
 

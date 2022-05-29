@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Header.scss';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
-import Typical from 'react-typical';
+import Typed from 'typed.js';
 import { BsLinkedin, BsInstagram, BsTwitch, BsGithub } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 import { scrollToHireMe } from '../../utilities/ScrollService';
 
 const Header = () => {
+  const el = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        "Full Stack Dev",
+        "Web Developer",
+        "Freelancer",
+        ""
+      ],
+      typeSpeed: 100,
+      startDelay: 300,
+      backSpeed: 75,
+      backDelay: 100,
+      loop: true,
+      loopCount: Infinity,
+      smartBackspace: true,
+      showCursor: false,
+    }
+
+    const typed = new Typed(el.current, options);
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <div id='home' className='app__header app__flex'>
 
@@ -42,21 +69,10 @@ const Header = () => {
               </div>
 
               <p>Hello, I'm</p>
-              <h1 className='head-text'>Nathan G.</h1>
-
-              <Typical
-                className='app__header-typical'
-                loop={Infinity}
-                steps={[
-                  "Full Stack Dev",
-                  1500,
-                  "Web Developer",
-                  1500,
-                  "Freelancer",
-                  1500,
-                ]}
-                wrapper='p'
-              />
+              <h1 className='app__header-name'>Nathan G.</h1><br />
+              <div className='app__header-height'>
+                <span className='app__header-typical' ref={el} />
+              </div>
             </div>
           </div>
 

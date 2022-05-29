@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Footer.scss';
-import { motion } from 'framer-motion';
-import { urlFor, client } from '../../client';
+// import { motion } from 'framer-motion';
+import { client } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { images } from '../../constants';
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
-import Typical from 'react-typical';
 import { BsLinkedin, BsInstagram, BsTwitch, BsGithub } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
+import Typed from 'typed.js';
 
 const Footer = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const el = useRef(null);
 
   const { name, email, message } = formData;
 
@@ -39,6 +40,30 @@ const Footer = () => {
       .catch((err) => console.log(err));
   };
 
+  useEffect(() => {
+    const options = {
+      strings: [
+        "Get In Touch",
+        "I'll Get Back ASAP",
+        "Talk Soon!",
+      ],
+      typeSpeed: 100,
+      startDelay: 300,
+      backSpeed: 75,
+      backDelay: 100,
+      loop: true,
+      loopCount: Infinity,
+      smartBackspace: true,
+      showCursor: false,
+    }
+
+    const typed = new Typed(el.current, options);
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
     <>
       <ScreenHeading
@@ -48,11 +73,11 @@ const Footer = () => {
       <div className='app__footer-main-container' id='contact'>
         <div className="app__footer-cards">
           <div className="app__footer-card ">
-            <img src={images.email} alt="email" />
+            <img src={images.gmail} alt="email" />
             <a href="mailto:nathangusky13@gmail.com" className="p-text">Nathan Gusky</a>
           </div>
           <div className="app__footer-card">
-            <img src={images.mobile} alt="phone" />
+            <img src={images.phone} alt="phone" />
             <a href="tel:+1 (850) 556-3452" className="p-text">+1 (850) 556-3452</a>
           </div>
         </div>
@@ -63,17 +88,9 @@ const Footer = () => {
           <div className='app__footer-left-column'>
             <h2 className='app__footer-left-column-title'>
               {" "}
-              <Typical
-                loop={Infinity}
-                steps={[
-                  "Get In Touch",
-                  1000,
-                  "I'll Get Back ASAP",
-                  1000,
-                  "Talk Soon!",
-                  1000,
-                ]}
-              />
+              <div className="app__footer-height">
+                <span ref={el} />
+              </div>
             </h2>
 
             <div className='app__footer-left-links'>
@@ -118,7 +135,7 @@ const Footer = () => {
               <button type="button" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
             </div>
           ) : (
-            <div>
+            <div className='app__footer-response-div'>
               <h3 className='app__footer-response'>
                 Thank you for getting in touch!
               </h3>
@@ -130,4 +147,4 @@ const Footer = () => {
   );
 };
 
-export default MotionWrap(Footer, 'app__footer');
+export default AppWrap(MotionWrap(Footer, 'app__footer'), 'footer');
